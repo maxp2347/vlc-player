@@ -137,10 +137,14 @@ L'exécutable est généré dans `dist/VLCPlayer` (ou `dist\VLCPlayer.exe`).
 > - **macOS** :
 >   `--add-binary "/Applications/VLC.app/Contents/MacOS/lib/libvlc.dylib:." --add-binary "/Applications/VLC.app/Contents/MacOS/lib/libvlccore.dylib:." --collect-data /Applications/VLC.app/Contents/MacOS/plugins`
 > - **Linux** :
->   `--add-binary "/usr/lib/x86_64-linux-gnu/libvlc.so*:." --add-binary "/usr/lib/x86_64-linux-gnu/libvlccore.so*:.”`
+>   `--add-binary "/usr/lib/x86_64-linux-gnu/libvlc.so*:." --add-binary "/usr/lib/x86_64-linux-gnu/libvlccore.so*."`
 
 Chaque build doit être fait **sur** la plateforme cible (PyInstaller ne fait pas
 de compilation croisée).
+
+> **Note** : si vous clonez ce dépôt sous Linux/macOS, rendez le script exécutable
+> après le clone : `chmod +x build.sh` (le bit exécutable n'est pas préservé par
+> l'envoi via API).
 
 ## Limitations connues
 
